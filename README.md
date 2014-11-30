@@ -98,12 +98,18 @@ ssh -i ~/.ssh/identity.pem root@130.206.x.y
 de donde entrarás en la línea de órdenes con privilegios de `root`. Como hacerlo así todo el tiempo puede ser un poco latoso, puedes también copiar [tu clave pública](http://git-scm.com/book/es/v1/Git-en-un-servidor-Generando-tu-clave-p%C3%BAblica-SSH) para acceder cuando lo desees
 
 ```
-cat ~/.ssh/id_rsa.pub | ssh -i ~/.ssh/jj-iv.pem root@130.206.x.y "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
+cat ~/.ssh/id_rsa.pub | ssh -i ~/.ssh/identity.pem root@130.206.x.y "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
+```
+
+usando, directamente,
+
+```
+ssh  root@130.206.x.y
 ```
 
 ## A dónde ir desde aquí
 
-Tienes una máquina virtual, puedes hacer con ella lo que desees. Instalar, desinstalar, o tirarla y meter una nueva.
+Tienes una máquina virtual, puedes hacer con ella lo que desees. Instalar, desinstalar, o tirarla y meter una nueva. 
 
 
 
