@@ -4,10 +4,17 @@ FIWARE-cloud-tuto
 Tutorial para utilizar el servicio cloud de FIWARE
 --------------------------------------------------
 
-Antes de empezar, cabe decir que el proceso requiere de mucha paciencia ya que (al menos cuando se escribe esta página) la página web tiene muchos problemas técnicos y deja de funcionar correctamente. En algunos casos, si algo va mal la cuenta puede acabar en un estado en el que no se puede recuperar. 
+Antes de empezar, cabe decir que el proceso requiere de mucha paciencia ya que (al menos cuando se escribe esta página) la página web tiene muchos problemas técnicos y deja de funcionar correctamente. En algunos casos, si algo va mal la cuenta puede acabar en un estado en el que no se puede recuperar.
 
 ![Inicio FIWARE LAB](images/creacioncloud/0.jpg)
 *Este es un ejemplo de lo que pasa*
+Si te pasa esto, una forma de solucinarlo (para no tener que esperar) es la siguiente:
++ Recarga la página (pulsando "F5", por ejemplo)
++ Interrumpe la recarga de la página (pulsando "Esc", por ejemplo)
++ Vuelve a cargar la página (de nuevo, "F5")
++ Obtendrás un mensaje de error en la parte inferior de la página. Tendrás que volver a intentar hacer lo que estabas haciendo cuando la página se quedó "colgada" (aunque pierdas la configuración, cuando la web ha dejado de responder ya la habías perdido -así por lo menos no pierdes el tiempo-).
+
+
 
 Una vez hayamos accedido a [FIWARE LAB](https://account.lab.fi-ware.org/), obtendremos esta página
 
@@ -54,7 +61,7 @@ Crearemos una nueva regla cuyos valores serán:
 
 Una vez relleno, pulsaremos sobre "Add rule" y veremos como se crea una nueva regla. En realidad, este paso se puede hacer en cualquier momento. El puerto 22 es que usaremos más adelante para conectarnos por `ssh`.
 
-Podemos cerrar el formulario. Ahora nos dirigiremos a la pestaña "Keypairs". Pulsaremos sobre "Create Keypair" y aparecerá un formulario como el que se muestra a continuación (en el que escribiremos un nombre para nuestro keypair). 
+Podemos cerrar el formulario. Ahora nos dirigiremos a la pestaña "Keypairs". Pulsaremos sobre "Create Keypair" y aparecerá un formulario como el que se muestra a continuación (en el que escribiremos un nombre para nuestro keypair).
 
 ![Crear keypair](images/creacioncloud/7.jpg)
 
@@ -68,7 +75,7 @@ También debes cambiar los permisos de la clave privada que acabas de descargar 
 chmod 400 ~/.ssh/identity.pem
 ```
 
-Finalmente, hay que crear una *IP flotante* para poder acceder a ella desde fuera. En el mismo grupo, vamos a la solapa *Floating IPs" y pulsamos sobre *Allocate IP to Project". En FI-Ware se permiten varias máquinas virtuales, pero sólo se puede acceder a una de ellas desde el exterior. Esta IP la usarás más adelante para eso. 
+Finalmente, hay que crear una *IP flotante* para poder acceder a ella desde fuera. En el mismo grupo, vamos a la solapa *Floating IPs" y pulsamos sobre *Allocate IP to Project". En FI-Ware se permiten varias máquinas virtuales, pero sólo se puede acceder a una de ellas desde el exterior. Esta IP la usarás más adelante para eso.
 
 ## Creación de una instancia
 
@@ -115,7 +122,4 @@ ssh  root@130.206.x.y
 
 ## A dónde ir desde aquí
 
-Tienes una máquina virtual, puedes hacer con ella lo que desees. Instalar, desinstalar, o tirarla y meter una nueva. 
-
-
-
+Tienes una máquina virtual, puedes hacer con ella lo que desees. Instalar, desinstalar, o tirarla y meter una nueva.
