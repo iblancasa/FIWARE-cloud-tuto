@@ -8,6 +8,7 @@ Antes de empezar, cabe decir que el proceso requiere de mucha paciencia ya que (
 
 ![Inicio FIWARE LAB](images/creacioncloud/0.jpg)
 *Este es un ejemplo de lo que pasa*
+
 Si te pasa esto, una forma de solucinarlo (para no tener que esperar) es la siguiente:
 + Recarga la página (pulsando "F5", por ejemplo)
 + Interrumpe la recarga de la página (pulsando "Esc", por ejemplo)
@@ -15,6 +16,7 @@ Si te pasa esto, una forma de solucinarlo (para no tener que esperar) es la sigu
 + Obtendrás un mensaje de error en la parte inferior de la página. Tendrás que volver a intentar hacer lo que estabas haciendo cuando la página se quedó "colgada" (aunque pierdas la configuración, cuando la web ha dejado de responder ya la habías perdido -así por lo menos no pierdes el tiempo-).
 
 
+****
 
 Una vez hayamos accedido a [FIWARE LAB](https://account.lab.fi-ware.org/), obtendremos esta página
 
