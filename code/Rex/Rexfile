@@ -3,7 +3,7 @@ private_key "/home/jmerelo/.ssh/jj-iv.pem"; # fichero .pem generado por FIWARE
 public_key "/home/jmerelo/.ssh/jj-iv.pem.pub"; # fichero generado con ssh-keygen -y -f jj-iv.pem > jj-iv.pem.pub
 key_auth;
 
-group fiware => "130.206.127.211";
+group fiware => "130.206.x.y";
 
 desc "Install emacs";
 task "emacs", group => "fiware", sub {
