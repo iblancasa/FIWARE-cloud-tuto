@@ -60,7 +60,13 @@ Podemos cerrar el formulario. Ahora nos dirigiremos a la pestaña "Keypairs". Pu
 
 Es muy importante que en este momento te descargues el fichero de identidad, con la extensión `.pem` y que lo guardes en el directorio `.ssh` o el que suelas usar para este tipo de cosas.
 
->Y es importante porque si no lo haces ahora, no lo vas a poder hacer nunca; no se puede acceder al fichero una vez creado (o no hemos visto como hacerlo). Uno de los problemas de usabilidad que tiene este FIWARE. 
+>Y es importante porque si no lo haces ahora, no lo vas a poder hacer nunca; no se puede acceder al fichero una vez creado (o no hemos visto como hacerlo). Uno de los problemas de usabilidad que tiene este FIWARE.
+
+También debes cambiar los permisos de la clave privada que acabas de descargar para que sólo el usuario tenga acceso de lectura a la misma:
+
+```
+chmod 400 ~/.ssh/identity.pem
+```
 
 Finalmente, hay que crear una *IP flotante* para poder acceder a ella desde fuera. En el mismo grupo, vamos a la solapa *Floating IPs" y pulsamos sobre *Allocate IP to Project". En FI-Ware se permiten varias máquinas virtuales, pero sólo se puede acceder a una de ellas desde el exterior. Esta IP la usarás más adelante para eso. 
 
