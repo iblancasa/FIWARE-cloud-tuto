@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Fiware-cloud-tuto by iblancasa</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/iblancasa/FIWARE-cloud-tuto">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Fiware-cloud-tuto</h1>
+            <h2>Tutorial para utilizar el servicio cloud de FIWARE</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/iblancasa/FIWARE-cloud-tuto/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/iblancasa/FIWARE-cloud-tuto/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a id="fiware-cloud-tuto" class="anchor" href="#fiware-cloud-tuto" aria-hidden="true"><span class="octicon octicon-link"></span></a>FIWARE-cloud-tuto</h1>
+
+<h2>
+<a id="tutorial-para-utilizar-el-servicio-cloud-de-fiware" class="anchor" href="#tutorial-para-utilizar-el-servicio-cloud-de-fiware" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tutorial para utilizar el servicio cloud de FIWARE</h2>
+
+<p>Antes de empezar, cabe decir que el proceso requiere de mucha paciencia ya que (al menos cuando se escribe esta página) la página web tiene muchos problemas técnicos y deja de funcionar correctamente. En algunos casos, si algo va mal la cuenta puede acabar en un estado en el que no se puede recuperar.</p>
+
+<p><img src="images/creacioncloud/0.jpg" alt="Inicio FIWARE LAB">
+<em>Este es un ejemplo de lo que pasa</em></p>
+
+<p>Si te pasa esto, una forma de solucinarlo (para no tener que esperar) es la siguiente:</p>
+
+<ul>
+<li>Recarga la página (pulsando "F5", por ejemplo)</li>
+<li>Interrumpe la recarga de la página (pulsando "Esc", por ejemplo)</li>
+<li>Vuelve a cargar la página (de nuevo, "F5")</li>
+<li>Obtendrás un mensaje de error en la parte inferior de la página. Tendrás que volver a intentar hacer lo que estabas haciendo cuando la página se quedó "colgada" (aunque pierdas la configuración, cuando la web ha dejado de responder ya la habías perdido -así por lo menos no pierdes el tiempo-).</li>
+</ul>
+
+<hr>
+
+<p>Una vez hayamos accedido a <a href="https://account.lab.fi-ware.org/">FIWARE LAB</a>, obtendremos esta página</p>
+
+<p><img src="images/creacioncloud/1.jpg" alt="Inicio FIWARE LAB"></p>
+
+<p>Deberemos registrarnos, rellenando el siguiente formulario</p>
+
+<p><img src="images/creacioncloud/2.jpg" alt="Registro"></p>
+
+<p>Cuando rellenemos el formulario, se enviará un email a la dirección de correo electrónico que se ha indicado en el formulario. Una vez confirmada nuestra cuenta (pulsando sobre un enlace que tiene el mail), nos llevará a esta página</p>
+
+<p><img src="images/creacioncloud/3.jpg" alt="Inicio como conectado"></p>
+
+<p>En la barra superior, disponemos de varias opciones. Pulsaremos sobre "Cloud", que nos llevará a la siguiente vista</p>
+
+<blockquote>
+<p><strong>IMPORTANTE: ¡¡NO LANCES UNA NUEVA INSTANCIA!!</strong>
+Antes hay que hacer algunas cosas.</p>
+</blockquote>
+
+<p><img src="images/creacioncloud/4.jpg" alt="Cloud"></p>
+
+<p>Pulsamos sobre "Security" y tendremos la siguiente vista</p>
+
+<p><img src="images/creacioncloud/5.jpg" alt="Security"></p>
+
+<p>Accederemos a la pestaña "Security groups". Crearemos un nuevo grupo de seguridad haciendo click en "Create Security Group".</p>
+
+<blockquote>
+<p>Esto no es estrictamente necesario, pero viene bien. En caso de no crear un nuevo <em>security group</em> lo de abajo se aplica al grupo por omisión, <em>default</em>.</p>
+</blockquote>
+
+<p>Aparecerá un formulario como el siguiente (que rellenaremos con el nombre que querramos darle al grupo y una breve descripción)</p>
+
+<p><img src="images/creacioncloud/6.jpg" alt="Security Group formulario"></p>
+
+<p>Una vez creado, haremos click derecho sobre él y pulsaremos la opción "Edit rules". Aparecerá una ventana como la siguiente</p>
+
+<p><img src="images/creacioncloud/security-group.png" alt="Security Group formulario"></p>
+
+<p>Crearemos una nueva regla cuyos valores serán:</p>
+
+<ul>
+<li>IP Protocol: TCP</li>
+<li>From port: 22</li>
+<li>To port: 22</li>
+<li>Source group: CIDR</li>
+<li>CIDR: 0.0.0.0/0</li>
+</ul>
+
+<p>Una vez relleno, pulsaremos sobre "Add rule" y veremos como se crea una nueva regla. En realidad, este paso se puede hacer en cualquier momento. El puerto 22 es que usaremos más adelante para conectarnos por <code>ssh</code>.</p>
+
+<p>Podemos cerrar el formulario. Ahora nos dirigiremos a la pestaña "Keypairs". Pulsaremos sobre "Create Keypair" y aparecerá un formulario como el que se muestra a continuación (en el que escribiremos un nombre para nuestro keypair).</p>
+
+<p><img src="images/creacioncloud/7.jpg" alt="Crear keypair"></p>
+
+<p>Es muy importante que en este momento te descargues el fichero de identidad, con la extensión <code>.pem</code> y que lo guardes en el directorio <code>.ssh</code> o el que suelas usar para este tipo de cosas.</p>
+
+<blockquote>
+<p>Y es importante porque si no lo haces ahora, no lo vas a poder hacer nunca; no se puede acceder al fichero una vez creado (o no hemos visto como hacerlo). Uno de los problemas de usabilidad que tiene este FIWARE.</p>
+</blockquote>
+
+<p>También debes cambiar los permisos de la clave privada que acabas de descargar para que sólo el usuario tenga acceso de lectura a la misma:</p>
+
+<pre><code>chmod 400 ~/.ssh/identity.pem
+</code></pre>
+
+<p>Finalmente, hay que crear una <em>IP flotante</em> para poder acceder a ella desde fuera. En el mismo grupo, vamos a la solapa *Floating IPs" y pulsamos sobre *Allocate IP to Project". En FI-Ware se permiten varias máquinas virtuales, pero sólo se puede acceder a una de ellas desde el exterior. Esta IP la usarás más adelante para eso.</p>
+
+<h2>
+<a id="creación-de-una-instancia" class="anchor" href="#creaci%C3%B3n-de-una-instancia" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creación de una instancia</h2>
+
+<p>Cambiamos de sección del menú de la izquierda: <em>Instances</em> (con 9 puntitos) y de ahí, el botón azul "Launch new instance", que lanzará inicialmente una pantalla en la que se selecciona el tipo de la imagen. Puedes seleccionar la que más te guste, aunque para aplicaciones específicas necesitarás alguna específica como <code>iot-broker-R3.4</code>. Si no vas a hacerlo, prueba cualquiera de las imágenes de Ubuntu o CentOS que hay.</p>
+
+<p>A partir de ahí hay tres pasos.</p>
+
+<ol>
+<li>Darle nombre a la instancia</li>
+<li>Seleccionar un <em>flavor</em>: small o tiny. La más pequeña es la tiny, la <em>small</em> es un poco más grance, con 10GB y 2 Gigas de memoria. <em>Instance count</em> es cuantas del mismo tipo queremos usar. Se pulsa Next.</li>
+<li>Seleccionar el <em>keypair</em> que hemos creado antes y el grupo de seguridad que hemos creado o el <em>default</em>. Se pulsa Next y se llega a "customization Script", que por lo pronto no vamos a usar. Next otra vez.</li>
+<li>La pantalla de resumen te muestra algo así:</li>
+</ol>
+
+<blockquote>
+<p>Vale, eran tres pero este último no cuenta</p>
+</blockquote>
+
+<p><img src="images/creacioncloud/summary.png" alt="Crear keypair"></p>
+
+<p>y puedes pulsar en <em>Launch instance</em> de nuevo.</p>
+
+<p>Una vez hecho esto, se irá creando y arrancando la máquina virtual hasta que en la columna <em>Power state</em> indique <em>RUNNING</em>.</p>
+
+<h2>
+<a id="acceder-a-la-máquina-desde-fuera" class="anchor" href="#acceder-a-la-m%C3%A1quina-desde-fuera" aria-hidden="true"><span class="octicon octicon-link"></span></a>Acceder a la máquina desde fuera</h2>
+
+<p>Primero habrá que asignarle una IP, la que hemos generado antes. La IP con la que se crea sólo deja acceder desde la Intranet del propio FIWARE. Así que volvemos a la opción Security -&gt; Floating IPs, marcamos la que tenemos y le damos a Actions-&gt; Associate IP.</p>
+
+<p>En la pantalla nos saldrán las MVs que tenemos. Seleccionamos una y en la segunda opción del menú seleccionamos su IP interna. Ya tenemos IP, algo por el estilo de <code>130.206.x.y</code>.</p>
+
+<p>Puedes usar el fichero de identidad que te has descargado antes para acceder desde el exterior, de esta forma</p>
+
+<pre><code>ssh -i ~/.ssh/identity.pem root@130.206.x.y
+</code></pre>
+
+<p>de donde entrarás en la línea de órdenes con privilegios de <code>root</code>. Como hacerlo así todo el tiempo puede ser un poco latoso, puedes también copiar <a href="http://git-scm.com/book/es/v1/Git-en-un-servidor-Generando-tu-clave-p%C3%BAblica-SSH">tu clave pública</a> para acceder cuando lo desees</p>
+
+<pre><code>cat ~/.ssh/id_rsa.pub | ssh -i ~/.ssh/identity.pem root@130.206.x.y "mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt;  ~/.ssh/authorized_keys"
+</code></pre>
+
+<p>usando, directamente,</p>
+
+<pre><code>ssh  root@130.206.x.y
+</code></pre>
+
+<h2>
+<a id="a-dónde-ir-desde-aquí" class="anchor" href="#a-d%C3%B3nde-ir-desde-aqu%C3%AD" aria-hidden="true"><span class="octicon octicon-link"></span></a>A dónde ir desde aquí</h2>
+
+<p>Tienes una máquina virtual, puedes hacer con ella lo que desees. Instalar, desinstalar, o tirarla y meter una nueva.</p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/iblancasa">iblancasa</a> can be found on <a href="https://github.com/iblancasa/FIWARE-cloud-tuto">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
